@@ -30,6 +30,39 @@
           }
         })();
       </script>
+      <script>
+        window.onload = function() {
+          let audio = new Audio('pop-sound.mp3'); // Ensure pop-sound.mp3 is in the directory
+          audio.play();
+          
+          let messageBox = document.createElement('div');
+          messageBox.style.position = 'fixed';
+          messageBox.style.bottom = '20px';
+          messageBox.style.right = '20px';
+          messageBox.style.padding = '15px';
+          messageBox.style.background = 'rgba(0, 0, 0, 0.8)';
+          messageBox.style.color = 'white';
+          messageBox.style.borderRadius = '10px';
+          messageBox.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.5)';
+          messageBox.style.display = 'flex';
+          messageBox.style.alignItems = 'center';
+          
+          let img = document.createElement('img');
+          img.src = 'message-icon.png'; // Ensure message-icon.png is in the directory
+          img.style.width = '30px';
+          img.style.height = '30px';
+          img.style.marginRight = '10px';
+          
+          let text = document.createElement('span');
+          text.innerText = 'Welcome to Santhosh Ailneni's Website!';
+          
+          messageBox.appendChild(img);
+          messageBox.appendChild(text);
+          document.body.appendChild(messageBox);
+          
+          setTimeout(() => { document.body.removeChild(messageBox); }, 5000);
+        };
+      </script>
   </head>
   <body>
     <div class='center-content-scroll'>
