@@ -4,12 +4,38 @@
       <meta charset="utf-8"></meta>
       <title>Santhosh Ailneni's Website</title>
       <link href='index.css' rel="stylesheet" type="text/css"></link>
+      <script>
+        (function(){
+          if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+            window.chatbase=(...arguments)=>{
+              if(!window.chatbase.q){window.chatbase.q=[]}
+              window.chatbase.q.push(arguments)
+            };
+            window.chatbase=new Proxy(window.chatbase,{
+              get(target,prop){
+                if(prop==="q"){return target.q}
+                return(...args)=>target(prop,...args)
+              }
+            })
+          }
+          const onLoad=function(){
+            const script=document.createElement("script");
+            script.src="https://www.chatbase.co/embed.min.js";
+            script.id="13etQy93Fd795wDePqXQw";
+            script.domain="www.chatbase.co";
+            document.body.appendChild(script)
+          };
+          if(document.readyState==="complete"){onLoad()}else{
+            window.addEventListener("load",onLoad)
+          }
+        })();
+      </script>
   </head>
   <body>
     <div class='center-content-scroll'>
       <div class='center-content'>
         <div id='content-header'>
-          <img class='profile-picture' src='me .jpg'>
+          <img class='profile-picture' src='me.jpg'>
           <h1>Santhosh Ailneni</h1>
           <p>Student at Jbrec</p>
         </div>
